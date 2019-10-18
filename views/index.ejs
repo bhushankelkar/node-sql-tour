@@ -1,0 +1,33 @@
+<% include partials/header.ejs %>
+    <div class="table-wrapper">
+        <% if (category.length > 0) {%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% category.forEach((categor, index) => { %>
+                        <tr>
+                            <th scope="row"><%= categor.catid %></th>
+                            
+                            <th scope="row"><%= categor.catname %></th>
+                            <th scope="row"><%= categor.catlocation %></th>
+<th><a href="/viewpackage/<%= categor.catid %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">VIEW</a>
+</th>                                
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="text-center">No players found. Go <a href="/add" >here</a> to add players.</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

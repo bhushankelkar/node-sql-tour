@@ -1,0 +1,29 @@
+<% include partials/header.ejs %>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+
+    <% if (category) { %>
+        <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="category_name">Category Name</label>
+                    <input type="text" class="form-control" name="catname" id="catname"  value="<%= category.catname %>" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="category_location">Category Location</label>
+                        <input type="text" class="form-control" name="catlocation" id="catlocation"  value="<%= category.catlocation %>" required>
+                    </div>
+                
+            </div>
+            <button type="submit" class="btn btn-success float-right">Update Category</button>
+        </form>
+    <% } else { %>
+        <p class="text-center">Category Not Found. Go <a href="/">Back</a> to main page</p>
+    <% } %>
+</div>
+
+</body>
+</html>

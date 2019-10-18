@@ -1,0 +1,33 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input type="number" class="form-control" name="aid" id="aid" placeholder="AD ID" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="title" id="title" placeholder="Title" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="details" id="details" placeholder="details" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="company" id="company" placeholder="Company" required>
+                </div>
+                
+                <div class="col-md-12">
+                    <label for="player-img"><b> Image</b></label><br>
+                    <input type="file" name="pic" id="player-img" class="" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Add Advertisememnt</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

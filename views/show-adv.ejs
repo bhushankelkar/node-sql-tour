@@ -1,0 +1,51 @@
+<% include partials/header.ejs %>
+<html>
+    <head>
+            <style>
+                    
+                    
+                    .player-img:hover {
+                      transform: scale(1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+                    }
+                    </style>
+                    
+    </head>
+    <div class="table-wrapper" >
+        <% if (adv.length > 0) {%>
+            <table class="table table-hovered">
+                <thead class="thead-dark" >
+                    <tr>
+                        <th scope="col">AID</th>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">Pic</th>
+                        <th scope="col">Company</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% adv.forEach((ad, index) => { %>
+                        <tr>
+                            <th scope="row"><%= ad.aid %></th>
+                            
+                            <th scope="row"><%= ad.title %></th>
+                            <td><img src="/assets/img/<%= ad.pic %>" class="rounded-circle player-img" alt=""></td>
+                            <th scope="row"><%= ad.company %></th>
+                            <th scope="row"><%= ad.details%></th>
+
+<td scope="row"><a href="/editadv/<%= ad.aid %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">EDIT</a>
+
+<a href="/deleteadv/<%= ad.aid %>" target="_blank" rel="noopener" class="btn btn-sm btn-danger">DELETE</a>
+</td>                               
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="text-center">No players found. Go <a href="/add" >here</a> to add players.</p>
+        <% } %>
+    </div>
+</div>
+
+</html>

@@ -1,0 +1,37 @@
+<% include partials/header.ejs %>
+    <div class="table-wrapper">
+            <% if (message) { %>
+                <p class="text-center text-danger"><%= message %></p>
+            <% } %>
+        <% if (package) {%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                            <th scope="col">ID</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                                <th scope="row"><%= package.packid %></th>
+                            <th scope="row"><%= package.price %></th>
+                            
+                            <th scope="row"><%= package.details %></th>
+                           
+<th><a href="/bookpackage/<%= package.packid %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">BOOK</a>
+</th>                                
+                            </td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="text-center">No players found. Go <a href="/add" >here</a> to add players.</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
